@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Andy's Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Link your stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/621135179_18111474829647449_2219451687861594778_n.jpg">
+    <link rel="apple-touch-icon" href="assets/621135179_18111474829647449_2219451687861594778_n.jpg">
+  </head>
+  <body>
+    <div class="cursor"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Andy Suri</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="hero">
+      <div class="container text-center">
+        <img src="assets\621135179_18111474829647449_2219451687861594778_n.jpg" alt="Andy Suri headshot" id="headshot" class="fade-in delay-1 shadow-sm mb-4">
+        <h1 class="display-4 fade-in delay-2">Hi, I'm Andy!</h1>
+        <p class="lead text-muted fade-in delay-3">BSc Computer Science at McMaster University. I build AI, computer vision, and embedded systems.</p>
+
+        <div class="mt-4 fade-in delay-4">
+          <a href="https://www.linkedin.com/in/andy-suri-645bb531a/" target="_blank" rel="noopener" class="btn btn-forest me-2">LinkedIn</a>
+          <a href="mailto:ands10807@gmail.com" class="btn btn-forest me-2">Email</a>
+          <a href="projects.html" class="btn btn-forest me-2">View Projects</a>
+          <a href="about.html" class="btn btn-forest">About</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4" style="background: linear-gradient(180deg, #f4e8d1, #fee2cc, #f0e5d1);">
+      <div class="container text-center text-muted">© 2026 Andy Suri</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="cursor.js"></script>
+  </body>
+</html>

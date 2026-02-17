@@ -1,0 +1,812 @@
+/* Fonts */
+.lora-perfect {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+/* Body + background (compatible with Bootstrap layout) */
+body {
+  background: linear-gradient(180deg, #f4e8d1, #fee2cc, #f0e5d1);
+  background-size: 100% 300%;
+  animation: gradientVertical 20s ease-in-out infinite;
+  font-size: 18px;
+}
+
+/* Headshot styling */
+/* Headshot: responsive with rounded border */
+#headshot{
+  max-width:220px;
+  width:100%;
+  height:auto;
+  border:4px solid #2e473b;
+  border-radius:50%;
+}
+
+/* Header styling */
+#Welcome{
+    font-family:'Lora',serif;
+    font-weight:1000;  
+    color:#2e473b;
+}
+
+/* Global text */
+html{
+    color:#7c5c42;
+    font-family:'Lora',serif;
+}
+
+#hyperlink{
+    color:#6b7b58;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background-color: rgba(61, 32, 0, 0.645);
+  border: 2px solid #000000;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, background-color 0.2s ease;
+  z-index: 9999;
+}
+
+/* (body styles moved above) */
+
+@keyframes gradientVertical {
+  0% { background-position: 50% 100%; }
+  50% { background-position: 50% 0%; }
+  100% { background-position: 50% 100%; }
+}
+/* Fade + slide-in animation for content */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0; /* start hidden */
+  animation: fadeSlideIn 1s forwards;
+}
+
+.fade-in.delay-1 { animation-delay: 0.3s; }
+.fade-in.delay-2 { animation-delay: 0.6s; }
+.fade-in.delay-3 { animation-delay: 0.9s; }
+.fade-in.delay-4 { animation-delay: 1.2s; }
+
+/* Centered hero for homepage */
+.hero {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* Larger hero typography */
+.hero .display-4 {
+  font-size: 3.5rem;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.hero .lead {
+  font-size: 1.35rem;
+  color: #5c4e3f;
+}
+
+/* Slight spacing inside cards when animated */
+.card.fade-in { padding-top: 0.25rem; }
+
+/* Planetary projects UI */
+.system-wrap { position: relative; padding: 3rem 0 5rem; }
+.system { width: 760px; height: 760px; margin: 0 auto; position: relative; transform-style: preserve-3d; perspective: 1200px; transform: rotateX(18deg); }
+.sun { position: absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:140px; height:140px; border-radius:50%; background: radial-gradient(circle at 30% 30%, #ffd27f, #ffb84d); display:flex; align-items:center; justify-content:center; font-weight:700; box-shadow: 0 12px 30px rgba(255,170,0,0.18); }
+
+.orbit { position: absolute; left:50%; top:50%; transform-style: preserve-3d; transform-origin: center center; }
+.orbit::before { content: ''; position: absolute; left:50%; top:50%; transform: translate(-50%, -50%); border-radius:50%; border: 1px dashed rgba(0,0,0,0.06); }
+
+.orbit-1 { width: 220px; height: 220px; margin-left: -110px; margin-top: -110px; animation: spin var(--speed) linear infinite; }
+.orbit-1::before { width: 220px; height: 220px; }
+.orbit-2 { width: 340px; height: 340px; margin-left: -170px; margin-top: -170px; animation: spin calc(var(--speed) * -1) linear infinite; }
+.orbit-2::before { width: 340px; height: 340px; }
+.orbit-3 { width: 460px; height: 460px; margin-left: -230px; margin-top: -230px; animation: spin var(--speed) linear infinite; }
+.orbit-3::before { width: 460px; height: 460px; }
+.orbit-4 { width: 580px; height: 580px; margin-left: -290px; margin-top: -290px; animation: spin calc(var(--speed) * -1) linear infinite; }
+.orbit-4::before { width: 580px; height: 580px; }
+.orbit-5 { width: 700px; height: 700px; margin-left: -350px; margin-top: -350px; animation: spin var(--speed) linear infinite; }
+.orbit-5::before { width: 700px; height: 700px; }
+
+.planet { position: absolute; left:50%; top:50%; transform-origin: center center; display:flex; align-items:center; justify-content:center; width:92px; height:92px; margin:-46px; border-radius:50%; background:linear-gradient(135deg,#fff,#e9f4ff); cursor:pointer; box-shadow: 0 8px 18px rgba(0,0,0,0.12); transition: transform .25s ease, box-shadow .2s, background .2s; font-weight:700; }
+.orbit .planet { transform: translateX(var(--r,140px)); }
+.planet:hover { transform: translateX(var(--r,140px)) scale(1.14); box-shadow: 0 14px 30px rgba(0,0,0,0.18); background: linear-gradient(135deg,#dfeeff,#cfe8ff); }
+
+@keyframes spin { from { transform: rotateZ(0deg); } to { transform: rotateZ(360deg); } }
+
+.planet-preview { position: absolute; right: 2rem; top: 2rem; width: 260px; padding: 14px; background: rgba(255,255,255,0.98); border-radius: 8px; box-shadow: 0 10px 28px rgba(0,0,0,0.12); display: none; }
+.system-wrap:hover .planet-preview { display: block; }
+
+@media (max-width: 1000px) {
+  .system { width: 420px; height: 420px; transform: rotateX(10deg); }
+  .orbit-1{ width: 140px; height:140px; margin-left:-70px; margin-top:-70px; }
+  .orbit-2{ width: 220px; height:220px; margin-left:-110px; margin-top:-110px; }
+  .orbit-3{ width: 300px; height:300px; margin-left:-150px; margin-top:-150px; }
+  .orbit-4{ width: 380px; height:380px; margin-left:-190px; margin-top:-190px; }
+  .orbit-5{ display:none; }
+  .planet-preview{ display:none !important; }
+}
+
+/* Projects page with forest green theme */
+.projects-main { padding: 3rem 0; }
+
+/* Alternating left-right project layout */
+.projects-list { display: flex; flex-direction: column; gap: 4rem; max-width: 1000px; margin: 0 auto; }
+
+.project-row { display: flex; align-items: center; gap: 3rem; }
+.project-row-reverse { flex-direction: row-reverse; }
+.project-row:nth-child(even) { flex-direction: row-reverse; }
+
+.project-content { flex: 1; }
+.project-image { flex: 1; }
+.project-image img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 2px solid #2d5016; }
+
+.project-title { font-family: 'Lora', serif; color: #2d5016; font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+.project-category { color: #2d5016 !important; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem !important; }
+.project-description { color: #555; font-size: 1.08rem; line-height: 1.7; margin-bottom: 1.5rem; }
+
+.btn-forest { background-color: #2d5016; border-color: #2d5016; color: #fff; }
+.btn-forest:hover { background-color: #1e3810; border-color: #1e3810; color: #fff; }
+
+@media (max-width: 768px) {
+  .projects-list { gap: 3rem; }
+  .project-row, .project-row-reverse { flex-direction: column; gap: 1.5rem; }
+  .project-title { font-size: 1.7rem; }
+  .hero .display-4 { font-size: 2rem; }
+  .hero .lead { font-size: 1.1rem; }
+}
+
+/* Navbar tweaks for Bootstrap */
+.navbar-brand { font-family: 'Lora', serif; color: #2d5016 !important; font-weight: 600; }
+.brand-logo { width: 32px; height: 32px; object-fit: cover; border-radius: 6px; vertical-align: middle; }
+.navbar { border-bottom: 2px solid #2d5016; background-color: #f7efe2 !important; }
+.navbar .nav-link { color: rgba(45, 80, 22, 0.85) !important; }
+.navbar .nav-link.active { font-weight: 600; color: #2d5016 !important; }
+
+/* Forest green button theme */
+.btn-success { background-color: #2d5016; border-color: #2d5016; }
+.btn-success:hover { background-color: #1e3810; border-color: #1e3810; }
+.btn-outline-success { color: #2d5016; border-color: #2d5016; }
+.btn-outline-success:hover { background-color: #2d5016; border-color: #2d5016; color: #fff; }
+
+/* About page styling */
+.about-content { max-width: 800px; margin: 0 auto; }
+
+.about-section { margin-bottom: 3rem; }
+
+.about-subheading { font-family: 'Lora', serif; color: #2d5016; font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+
+.about-section p { color: #555; font-size: 1.06rem; line-height: 1.75; margin-bottom: 1rem; }
+
+.about-list { list-style: none; padding-left: 0; }
+.about-list li { color: #555; font-size: 1.06rem; line-height: 1.6; padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
+.about-list li:before { content: '◆'; color: #2d5016; position: absolute; left: 0; font-weight: bold; }
+
+.skills-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+.skill-category { background: #f9f7f3; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #2d5016; }
+.skill-category h4 { color: #2d5016; font-weight: 600; margin-bottom: 0.5rem; font-family: 'Lora', serif; font-size: 1.05rem; }
+.skill-category p { color: #555; font-size: 1.05rem; margin: 0; }
+
+@media (max-width: 768px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* ================================================================
+ * RESPONSIVE DESIGN: TABLETS AND PHONES
+ * ================================================================ */
+
+/* Large Tablets and Small Desktops (769px - 1023px) */
+@media (max-width: 1023px) {
+  .hero .display-4 {
+    font-size: 2.8rem;
+  }
+  .hero .lead {
+    font-size: 1.2rem;
+  }
+  .project-title {
+    font-size: 1.95rem;
+  }
+  .about-subheading {
+    font-size: 1.75rem;
+  }
+  .system-wrap {
+    padding: 2rem 0 3rem;
+  }
+}
+
+/* Standard Tablets (769px - 991px) */
+@media (max-width: 991px) {
+  body {
+    font-size: 17px;
+  }
+  .navbar-brand {
+    font-size: 1.15rem;
+  }
+  .brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+  .hero {
+    min-height: 55vh;
+    padding: 2rem 0;
+  }
+  .hero .display-4 {
+    font-size: 2.5rem;
+  }
+  .hero .lead {
+    font-size: 1.1rem;
+  }
+  #headshot {
+    max-width: 180px;
+  }
+  .project-row,
+  .project-row-reverse {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .project-row:nth-child(even) {
+    flex-direction: column;
+  }
+  .project-title {
+    font-size: 1.85rem;
+  }
+  .project-category {
+    font-size: 0.9rem;
+  }
+  .project-description {
+    font-size: 1.02rem;
+  }
+  .about-section {
+    margin-bottom: 2.5rem;
+  }
+  .about-subheading {
+    font-size: 1.65rem;
+  }
+  .about-section p {
+    font-size: 1.02rem;
+  }
+  .about-list li {
+    font-size: 1.02rem;
+  }
+  .skill-category p {
+    font-size: 1rem;
+  }
+}
+
+/* Medium Tablets (577px - 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  .navbar {
+    padding: 0.75rem 0 !important;
+  }
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  .brand-logo {
+    width: 26px;
+    height: 26px;
+  }
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .hero {
+    min-height: 50vh;
+    padding: 1.5rem 0;
+  }
+  .hero .display-4 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  .hero .lead {
+    font-size: 1rem;
+  }
+  #headshot {
+    max-width: 160px;
+    border: 3px solid #2e473b;
+  }
+  .fade-in.delay-1 {
+    margin-bottom: 1.5rem;
+  }
+  .mt-4 {
+    margin-top: 1.5rem !important;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .btn-forest {
+    display: inline-block;
+    margin-right: 0.5rem !important;
+  }
+  /* Projects adjustments */
+  .project-row,
+  .project-row-reverse {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .project-content {
+    flex: 1;
+  }
+  .project-image {
+    flex: 1;
+  }
+  .project-title {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+  .project-category {
+    font-size: 0.85rem;
+    margin-bottom: 1rem !important;
+  }
+  .project-description {
+    font-size: 1rem;
+  }
+  .btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  /* About section */
+  .about-content {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  .about-section {
+    margin-bottom: 2rem;
+  }
+  .about-subheading {
+    font-size: 1.5rem;
+  }
+  .about-section p {
+    font-size: 1rem;
+  }
+  .about-list li {
+    font-size: 1rem;
+    padding-left: 1.2rem;
+  }
+  .skill-category {
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .skill-category h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .skill-category p {
+    font-size: 0.95rem;
+  }
+  /* System/planets */
+  .system {
+    width: 300px;
+    height: 300px;
+  }
+  .orbit-1 {
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+  }
+  .orbit-1::before {
+    width: 100px;
+    height: 100px;
+  }
+  .orbit-2 {
+    width: 160px;
+    height: 160px;
+    margin-left: -80px;
+    margin-top: -80px;
+  }
+  .orbit-2::before {
+    width: 160px;
+    height: 160px;
+  }
+  .orbit-3 {
+    width: 220px;
+    height: 220px;
+    margin-left: -110px;
+    margin-top: -110px;
+  }
+  .orbit-3::before {
+    width: 220px;
+    height: 220px;
+  }
+  .orbit-4 {
+    width: 280px;
+    height: 280px;
+    margin-left: -140px;
+    margin-top: -140px;
+  }
+  .orbit-4::before {
+    width: 280px;
+    height: 280px;
+  }
+  .sun {
+    width: 100px;
+    height: 100px;
+    font-size: 0.8rem;
+  }
+  .planet {
+    width: 70px;
+    height: 70px;
+    margin: -35px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Small Devices - Landscape Phones (481px - 576px) */
+@media (max-width: 576px) {
+  body {
+    font-size: 15px;
+  }
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  .brand-logo {
+    width: 24px;
+    height: 24px;
+  }
+  .navbar .nav-link {
+    padding: 0.5rem 0.75rem !important;
+  }
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .hero {
+    min-height: 45vh;
+    padding: 1rem 0;
+  }
+  .hero .display-4 {
+    font-size: 1.7rem;
+    line-height: 1.15;
+  }
+  .hero .lead {
+    font-size: 0.95rem;
+  }
+  #headshot {
+    max-width: 140px;
+    border: 3px solid #2e473b;
+    margin-bottom: 1rem !important;
+  }
+  .fade-in.delay-1 {
+    margin-bottom: 1rem;
+  }
+  .mt-4 {
+    margin-top: 1rem !important;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem !important;
+    margin-right: 0 !important;
+  }
+  /* Header adjustments */
+  .py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  header .display-5 {
+    font-size: 1.8rem !important;
+  }
+  header p {
+    font-size: 0.95rem;
+  }
+  /* Projects */
+  .projects-main {
+    padding: 1.5rem 0;
+  }
+  .projects-list {
+    gap: 2rem;
+  }
+  .project-row {
+    gap: 1rem;
+  }
+  .project-title {
+    font-size: 1.4rem;
+  }
+  .project-category {
+    font-size: 0.8rem;
+  }
+  .project-description {
+    font-size: 0.95rem;
+  }
+  .btn-sm {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  /* About section */
+  .about-content {
+    padding: 0;
+  }
+  .about-section {
+    margin-bottom: 1.5rem;
+  }
+  .about-subheading {
+    font-size: 1.35rem;
+  }
+  .about-section p {
+    font-size: 0.95rem;
+  }
+  .about-list li {
+    font-size: 0.95rem;
+    padding-left: 1rem;
+  }
+  .skills-grid {
+    gap: 1rem;
+  }
+  .skill-category {
+    padding: 0.8rem 1rem;
+  }
+  .skill-category h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+  .skill-category p {
+    font-size: 0.9rem;
+  }
+  /* System/planets - more optimized for small screens */
+  .system-wrap {
+    padding: 1rem 0 2rem;
+  }
+  .system {
+    width: 240px;
+    height: 240px;
+    transform: rotateX(5deg);
+  }
+  .orbit-1 {
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+  }
+  .orbit-1::before {
+    width: 80px;
+    height: 80px;
+  }
+  .orbit-2 {
+    width: 130px;
+    height: 130px;
+    margin-left: -65px;
+    margin-top: -65px;
+  }
+  .orbit-2::before {
+    width: 130px;
+    height: 130px;
+  }
+  .orbit-3 {
+    width: 180px;
+    height: 180px;
+    margin-left: -90px;
+    margin-top: -90px;
+  }
+  .orbit-3::before {
+    width: 180px;
+    height: 180px;
+  }
+  .orbit-4 {
+    display: none;
+  }
+  .sun {
+    width: 80px;
+    height: 80px;
+    font-size: 0.7rem;
+  }
+  .planet {
+    width: 56px;
+    height: 56px;
+    margin: -28px;
+    font-size: 0.65rem;
+  }
+  /* Footer */
+  footer {
+    padding: 1.5rem 0 !important;
+  }
+}
+
+/* Extra Small Devices - Portrait Phones (max 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  .navbar {
+    padding: 0.5rem 0 !important;
+  }
+  .navbar-brand {
+    font-size: 0.95rem;
+  }
+  .brand-logo {
+    width: 22px;
+    height: 22px;
+  }
+  .navbar .nav-link {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.9rem;
+  }
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .hero {
+    min-height: 40vh;
+    padding: 0.75rem 0;
+  }
+  .hero .display-4 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .hero .lead {
+    font-size: 0.9rem;
+  }
+  #headshot {
+    max-width: 120px;
+    border: 2px solid #2e473b;
+    margin-bottom: 0.75rem !important;
+  }
+  .fade-in.delay-1 {
+    margin-bottom: 0.75rem;
+  }
+  .mt-4 {
+    margin-top: 0.75rem !important;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem !important;
+    margin-right: 0 !important;
+  }
+  /* Header for pages */
+  .py-5 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  header {
+    padding: 1rem 0 !important;
+  }
+  header .display-5 {
+    font-size: 1.5rem !important;
+  }
+  header p {
+    font-size: 0.9rem !important;
+  }
+  /* Projects */
+  .projects-main {
+    padding: 1rem 0;
+  }
+  .projects-list {
+    gap: 1.5rem;
+  }
+  .project-row {
+    gap: 0.75rem;
+  }
+  .project-title {
+    font-size: 1.25rem;
+  }
+  .project-category {
+    font-size: 0.75rem;
+  }
+  .project-description {
+    font-size: 0.9rem;
+  }
+  .btn-sm {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  /* About */
+  .about-content {
+    padding: 0;
+  }
+  .about-section {
+    margin-bottom: 1.25rem;
+  }
+  .about-subheading {
+    font-size: 1.25rem;
+  }
+  .about-section p {
+    font-size: 0.9rem;
+  }
+  .about-list li {
+    font-size: 0.9rem;
+    padding-left: 0.9rem;
+  }
+  .skills-grid {
+    gap: 0.75rem;
+  }
+  .skill-category {
+    padding: 0.7rem 0.9rem;
+  }
+  .skill-category h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  .skill-category p {
+    font-size: 0.85rem;
+  }
+  /* System/planets */
+  .system-wrap {
+    padding: 0.75rem 0 1.5rem;
+  }
+  .system {
+    width: 200px;
+    height: 200px;
+    transform: rotateX(0deg);
+  }
+  .orbit-1 {
+    width: 65px;
+    height: 65px;
+    margin-left: -32.5px;
+    margin-top: -32.5px;
+  }
+  .orbit-1::before {
+    width: 65px;
+    height: 65px;
+  }
+  .orbit-2 {
+    width: 105px;
+    height: 105px;
+    margin-left: -52.5px;
+    margin-top: -52.5px;
+  }
+  .orbit-2::before {
+    width: 105px;
+    height: 105px;
+  }
+  .orbit-3 {
+    width: 145px;
+    height: 145px;
+    margin-left: -72.5px;
+    margin-top: -72.5px;
+  }
+  .orbit-3::before {
+    width: 145px;
+    height: 145px;
+  }
+  .sun {
+    width: 65px;
+    height: 65px;
+    font-size: 0.6rem;
+  }
+  .planet {
+    width: 48px;
+    height: 48px;
+    margin: -24px;
+    font-size: 0.6rem;
+  }
+  /* Footer */
+  footer {
+    padding: 1rem 0 !important;
+  }
+  .display-5 {
+    font-size: 1.5rem !important;
+  }
+}
