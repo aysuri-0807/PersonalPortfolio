@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Project placeholder image</title>
+  <desc id="desc">Placeholder image for a portfolio project card</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4e8d1" />
+      <stop offset="100%" stop-color="#fee2cc" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)" />
+  <rect x="80" y="80" width="1040" height="540" rx="24" fill="none" stroke="#2d5016" stroke-width="8" />
+  <text x="600" y="320" text-anchor="middle" font-family="Lora, serif" font-size="64" font-weight="700" fill="#2d5016">Project Preview</text>
+  <text x="600" y="390" text-anchor="middle" font-family="Lora, serif" font-size="34" fill="#2d5016">Placeholder Image</text>
+</svg>

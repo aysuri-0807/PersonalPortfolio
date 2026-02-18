@@ -4,11 +4,12 @@
 
   // slowed rotation speeds, pixel-appropriate sizes
   const projects = [
-    {id:'OpenTrainer', title:'OpenTrainer', desc:'AI / ML — Train classifiers without code', url:'https://github.com/aysuri-0807/OpenTrainer', color:0x78d6ff, size:18, distance:110, speed:0.06},
-    {id:'EcoCar', title:'EcoCarCAVS2025AFS', desc:'Autonomous systems — vehicle simulation & testing', url:'https://github.com/aysuri-0807/EcoCarCAVS2025AFS', color:0xffb86b, size:28, distance:170, speed:0.04},
-    {id:'EasyIBKR', title:'EasyIBKR', desc:'Backend / Finance — IBKR trading helper', url:'https://github.com/aysuri-0807/EasyIBKR', color:0x8fe88a, size:16, distance:230, speed:0.08},
-    {id:'PoliteTrashCan', title:'PoliteTrashCan', desc:'Embedded / IoT — speech-controlled hardware', url:'https://github.com/aysuri-0807/PoliteTrashCan', color:0xff7fbf, size:14, distance:290, speed:0.03},
-    {id:'Spotify', title:'Spotify_Recommendations', desc:'Full-stack — recommendation web app', url:'https://github.com/aysuri-0807/Spotify_Recommendations', color:0x8ea6ff, size:20, distance:350, speed:0.02}
+    {id:'NIMBUS', title:'NIMBUS Task Manager', desc:'No-fluff task manager — Rails backend deployed on Render pgSQL', url:'https://nimbus-dwan.onrender.com/', color:0x5ca46e, size:22, distance:110, speed:0.06},
+    {id:'OpenTrainer', title:'OpenTrainer', desc:'AI / ML — Train classifiers without code', url:'https://github.com/aysuri-0807/OpenTrainer', color:0x78d6ff, size:18, distance:170, speed:0.04},
+    {id:'EcoCar', title:'EcoCarCAVS2025AFS', desc:'Autonomous systems — vehicle simulation & testing', url:'https://github.com/aysuri-0807/EcoCarCAVS2025AFS', color:0xffb86b, size:28, distance:230, speed:0.03},
+    {id:'EasyIBKR', title:'EasyIBKR', desc:'Backend / Finance — IBKR trading helper', url:'https://github.com/aysuri-0807/EasyIBKR', color:0x8fe88a, size:16, distance:290, speed:0.08},
+    {id:'PoliteTrashCan', title:'PoliteTrashCan', desc:'Embedded / IoT — speech-controlled hardware', url:'https://github.com/aysuri-0807/PoliteTrashCan', color:0xff7fbf, size:14, distance:350, speed:0.02},
+    {id:'Spotify', title:'Spotify_Recommendations', desc:'Full-stack — recommendation web app', url:'https://github.com/aysuri-0807/Spotify_Recommendations', color:0x8ea6ff, size:20, distance:410, speed:0.015}
   ];
 
   // Basic three.js setup
